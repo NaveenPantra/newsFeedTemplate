@@ -75,6 +75,7 @@ body {
     width: 60%;
     box-shadow: var(--shadow-light);
     padding: 1rem;
+    border-radius: 10px;
 
     display: flex;
     flex-direction: column;
