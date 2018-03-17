@@ -154,17 +154,25 @@ let Controller = ( () => {
 
         let fetchOperation = (event) => {
 
+            //Getting the value of the clicked icon respective count
             let count = event.target.nextElementSibling.firstChild.textContent;
-            console.log(count);
+
+            //Getting total classes of the clicked content (i.e: Number of classes)
             let classCount = event.target.classList.length;
             count = parseInt(count);
+
+            // If classes on the clicked icon are <=2 then it is unSelected first
+                // So then it is not active, then when clicking it add class '.done' and increase count.
+            // If > 2 then it is selected
+                // So remove class and decrease count
             if (classCount <= 2) {
                 count++;
-                event.target.classList.toggle('done');
             } else {
                 count--;
-                event.target.classList.toggle('done');
             }
+            // Removing and Adding class '.done'
+            event.target.classList.toggle('done');
+            // Insert the updated count to DOM
             event.target.nextElementSibling.firstChild.textContent = String(count);
         };
 
